@@ -90,7 +90,7 @@ async function listener(event) {
                     - if it doesn't, then change the background color of the letter to gray
         */
 
-        if (word === wordOfTheDay) {
+        if (word.toLowerCase() === wordOfTheDay) {
             for (let i = index - 5; i < index; i++) {
                 letters[i].style.backgroundColor = "green";
             }
