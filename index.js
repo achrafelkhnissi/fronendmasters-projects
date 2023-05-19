@@ -8,6 +8,7 @@ let letters = document.querySelectorAll("li");
 let loader = document.querySelector("img");
 let result = document.querySelector(".result");
 let loser = document.querySelector(".loser");
+let resetBtn = document.querySelector(".reset");
 
 function reset() {
     index = 0;
@@ -97,6 +98,7 @@ async function listener(event) {
             result.style.color = "green";
             result.classList.remove("hidden");
             removeEventListener("keydown", listener);
+            loser.classList.add("hidden");
             return;
         }
 
@@ -138,6 +140,19 @@ async function main() {
 
     wordOfTheDay = await getWordOfTheDay();
 
+    resetBtn.addEventListener("click", () => {
+        reset();
+        letters.forEach((letter) => {
+            letter.innerHTML = " ";
+            letter.style.backgroundColor = "black";
+        });
+        result.classList.add("hidden");
+        result.innerHTML = "";
+        result.style.color = "white";
+        loser.classList.remove("hidden");
+        addEventListener("keydown", listener);
+    });
+
     result.addEventListener("click", () => {
         reset();
         letters.forEach((letter) => {
@@ -146,7 +161,7 @@ async function main() {
         });
         result.classList.add("hidden");
         result.innerHTML = "";
-        // addEventListener("keydown", listener);
+        addEventListener("keydown", listener);
     });
 
     loser.addEventListener("click", () => {
@@ -161,7 +176,7 @@ async function main() {
             result.classList.add("hidden");
             result.innerHTML = "";
         }, 2000);
-        // addEventListener("keydown", listener);
+        addEventListener("keydown", listener);
     });
 
     addEventListener("keydown", listener);
