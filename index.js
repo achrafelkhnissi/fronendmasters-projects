@@ -161,7 +161,7 @@ async function main() {
     loser.addEventListener("click", () => {
         reset();
         result.classList.remove("hidden");
-        result.innerHTML = "Word of the day: " + wordOfTheDay;
+        result.innerHTML = "Word of the day: " + wordOfTheDay.toUpperCase();
         setTimeout(() => {
             result.classList.add("hidden");
             result.innerHTML = "";
