@@ -15,6 +15,13 @@ function reset() {
     row = 0;
     word = "";
     finish = false;
+    letters.forEach((letter) => {
+        letter.innerHTML = " ";
+        letter.style.backgroundColor = "black";
+    });
+    result.classList.add("hidden");
+    result.innerHTML = "";
+    result.style.color = "white";
 }
 
 function isLetter(letter) {
@@ -142,34 +149,17 @@ async function main() {
 
     resetBtn.addEventListener("click", () => {
         reset();
-        letters.forEach((letter) => {
-            letter.innerHTML = " ";
-            letter.style.backgroundColor = "black";
-        });
-        result.classList.add("hidden");
-        result.innerHTML = "";
-        result.style.color = "white";
         loser.classList.remove("hidden");
         addEventListener("keydown", listener);
     });
 
     result.addEventListener("click", () => {
         reset();
-        letters.forEach((letter) => {
-            letter.innerHTML = " ";
-            letter.style.backgroundColor = "black";
-        });
-        result.classList.add("hidden");
-        result.innerHTML = "";
         addEventListener("keydown", listener);
     });
 
     loser.addEventListener("click", () => {
         reset();
-        letters.forEach((letter) => {
-            letter.innerHTML = " ";
-            letter.style.backgroundColor = "black";
-        });
         result.classList.remove("hidden");
         result.innerHTML = "Word of the day: " + wordOfTheDay;
         setTimeout(() => {
