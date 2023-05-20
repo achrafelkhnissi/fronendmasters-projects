@@ -1,4 +1,3 @@
-# wordle
 
 <h1 align="center">
 	WORLDLE
