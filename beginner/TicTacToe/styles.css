@@ -1,0 +1,86 @@
+body {
+    margin: 1rem auto;
+    padding: 3rem;
+    font-family: sans-serif;
+    text-align: center;
+}
+header {
+    width: 50%;
+    margin: 1em auto;
+}
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#board {
+    max-width: 50%;
+    margin: 1em auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+    background-color: teal;
+}
+.square {
+    min-height: 1.3em;
+    text-align: center;
+    background-color: white;
+    font-size: 5rem;
+    font-family: monospace;
+    color: black;
+}
+
+#players {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+#reset {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: teal;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+#reset:hover {
+    background-color: #006666;
+}
+#reset:active {
+    transform: translateY(4px);
+}
+
+.winner {
+    color: green;
+    border: solid 2px green;
+
+}
+
+.winner {
+    background-color: #4caf50;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tie {
+    background-color: #9e9e9e;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
